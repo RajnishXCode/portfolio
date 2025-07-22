@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FaReact, FaEthereum, FaNodeJs, FaGithub, FaDocker, FaAngular, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
 import { SiPython, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { FaLessThan, FaGreaterThan } from "react-icons/fa";
 
 const techIcons = [
   { Icon: FaHtml5, color: '#E44D26' },
@@ -78,31 +79,42 @@ const Hero: React.FC = () => {
         {/* Right Image with SVG Ring and Chevrons */}
         <div className="w-full md:w-1/2 flex items-center justify-center relative h-full min-h-[420px]">
           {/* Chevrons */}
-          <svg className="absolute left-0 top-[40%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* <svg className="absolute left-0 top-[40%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
             <polyline points="50,20 10,90 50,160" stroke="#FF5722" strokeWidth="3" fill="none" opacity="0.18" />
           </svg>
           <svg className="absolute right-0 top-[80%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
             <polyline points="10,20 50,90 10,160" stroke="#FF5722" strokeWidth="3" fill="none" opacity="0.18" />
-          </svg>
-          {/* SVG Ring behind image, centered */}
+          </svg> */}
+          <FaLessThan size={100} color="#FF5722" className='absolute -left-5 top-[40%] -translate-y-1/2 z-0 hidden md:block' />
+          <FaGreaterThan  size={100} color="#FF5722" className='absolute -right-5 top-[80%] -translate-y-1/2 z-0 hidden md:block' />
+
+
+          {/* SVG Ring behind image, centered, with gradient stroke */}
           <svg
-            className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
+            className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
             width="100%" height="100%" viewBox="0 0 420 420" fill="none"
             style={{ minWidth: 320, minHeight: 320, maxWidth: 500, maxHeight: 500 }}
             xmlns="http://www.w3.org/2000/svg"
           >
+            <defs>
+              <linearGradient id="ring-gradient" x1="210" y1="40" x2="210" y2="380" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#FF5722" stopOpacity="1" />
+                <stop offset="70%" stopColor="#FF5722" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#FF5722" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
             <circle
               cx="210"
               cy="210"
               r="170"
-              stroke="#FF5722"
+              stroke="url(#ring-gradient)"
               strokeWidth="16"
               fill="none"
-              opacity="0.7"
+              opacity="0.95"
             />
           </svg>
           {/* Actual image, bottom-aligned and no circular boundary */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full flex items-end justify-center z-10">
+          <div className="absolute bottom-0 left-[55%] -translate-x-1/2 w-full h-full flex items-end justify-center z-20">
             <img
               src="/public/mypic.png"
               alt="Rajnish Tripathi"
