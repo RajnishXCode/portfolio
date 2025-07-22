@@ -41,14 +41,14 @@ const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] px-6 md:px-12">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Here are some of the projects I've worked on. Each one represents a unique challenge and solution.
           </p>
         </div>
@@ -58,45 +58,45 @@ const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden"
+              className="bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-indigo-400/30 transition-all duration-300 transform hover:-translate-y-2 border border-white/20 dark:border-white/20 overflow-hidden"
             >
               {/* Project Image */}
-              <div className="h-48 bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-indigo-900/60 to-indigo-700/40 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-indigo-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-indigo-700 rounded-lg mx-auto mb-4 flex items-center justify-center">
                     <span className="text-white text-xl font-bold">
                       {project.title.split(' ').map(word => word[0]).join('')}
                     </span>
                   </div>
-                  <p className="text-gray-600 font-medium">Project Preview</p>
+                  <p className="text-gray-300 font-medium">Project Preview</p>
                 </div>
               </div>
 
               {/* Project Content */}
               <div className="p-6">
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-4">
+                <span className="inline-block px-3 py-1 bg-indigo-900/40 text-indigo-200 rounded-full text-sm font-medium mb-4">
                   {project.category}
                 </span>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Tech Stack */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold text-indigo-200 mb-2">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
+                        className="px-2 py-1 bg-indigo-900/40 text-indigo-200 rounded text-xs font-medium"
                       >
                         {tech}
                       </span>
@@ -114,7 +114,7 @@ const Portfolio: React.FC = () => {
                   </a>
                   <a
                     href={project.githubUrl}
-                    className="flex-1 border border-gray-300 text-gray-700 text-center py-2 px-4 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+                    className="flex-1 border border-indigo-900/40 text-indigo-200 text-center py-2 px-4 rounded-lg text-sm font-medium hover:bg-indigo-900/60 transition-colors"
                   >
                     View Code
                   </a>
@@ -126,7 +126,7 @@ const Portfolio: React.FC = () => {
 
         {/* View All Projects CTA */}
         <div className="text-center mt-16">
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-300 mb-6">
             Want to see more of my work? Check out my complete portfolio.
           </p>
           <a

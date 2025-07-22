@@ -61,14 +61,14 @@ const Pricing: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] px-6 md:px-12">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Pricing Plans
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Transparent pricing for different project requirements. All plans include consultation and project management.
           </p>
         </div>
@@ -78,10 +78,10 @@ const Pricing: React.FC = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 ${
+              className={`relative bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-indigo-400/30 transition-all duration-300 transform hover:-translate-y-2 border-2 ${
                 plan.popular 
                   ? 'border-indigo-600 scale-105' 
-                  : 'border-gray-100'
+                  : 'border-white/20 dark:border-white/20'
               }`}
             >
               {/* Popular Badge */}
@@ -95,22 +95,22 @@ const Pricing: React.FC = () => {
 
               <div className="p-8">
                 {/* Plan Name */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {plan.name}
                 </h3>
 
                 {/* Price */}
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-gray-900">
+                  <span className="text-4xl font-bold text-white">
                     {plan.price}
                   </span>
-                  <span className="text-gray-600 ml-2">
+                  <span className="text-gray-300 ml-2">
                     {plan.duration}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <p className="text-gray-300 mb-8 leading-relaxed">
                   {plan.description}
                 </p>
 
@@ -118,10 +118,10 @@ const Pricing: React.FC = () => {
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <svg className="w-5 h-5 text-indigo-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 text-indigo-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-indigo-100">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -134,7 +134,7 @@ const Pricing: React.FC = () => {
                   className={`w-full py-3 px-6 rounded-lg text-center font-semibold transition-all duration-300 ${
                     plan.popular
                       ? 'bg-indigo-600 text-white hover:bg-indigo-700 transform hover:scale-105'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                      : 'bg-indigo-900/40 text-indigo-200 hover:bg-indigo-900/60'
                   }`}
                 >
                   {plan.cta}
@@ -146,11 +146,11 @@ const Pricing: React.FC = () => {
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-white/10 dark:bg-white/10 rounded-2xl p-8 shadow-lg border border-white/20 dark:border-white/20">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Custom Solutions
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Need something specific? I offer custom pricing for unique requirements, 
               enterprise solutions, and ongoing maintenance contracts.
             </p>

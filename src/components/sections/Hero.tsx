@@ -1,16 +1,27 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FaReact, FaEthereum, FaNodeJs, FaGithub, FaDocker } from 'react-icons/fa';
-import { SiInternetcomputer, SiExpo } from 'react-icons/si';
+import React, { useEffect, useState, useRef } from 'react';
+import { FaReact, FaEthereum, FaNodeJs, FaGithub, FaDocker, FaAngular, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
+import { SiPython, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
-const techIcons = [FaReact, FaEthereum, FaNodeJs, FaGithub, FaDocker, SiInternetcomputer, SiExpo];
-const typingText = 'Fullstack & Blockchain Developer';
+const techIcons = [
+  { Icon: FaHtml5, color: '#E44D26' },
+  { Icon: FaCss3Alt, color: '#1572B6' },
+  { Icon: FaJsSquare, color: '#F7DF1E' },
+  { Icon: FaReact, color: '#61DAFB' },
+  { Icon: FaNodeJs, color: '#3C873A' },
+  { Icon: FaAngular, color: '#DD0031' },
+  { Icon: SiPython, color: '#3776AB' },
+  { Icon: FaEthereum, color: '#627EEA' },
+  { Icon: FaGithub, color: '#fff' },
+  { Icon: FaDocker, color: '#2496ED' },
+  { Icon: SiTypescript, color: '#3178C6' },
+  { Icon: SiTailwindcss, color: '#38BDF8' },
+];
 
 const Hero: React.FC = () => {
   // Typing animation state
   const [typed, setTyped] = useState('');
-  const [showLadder, setShowLadder] = useState([false, false, false, false]);
+  const typingText = 'Blockchain Developer';
 
-  // Typing effect
   useEffect(() => {
     if (typed.length < typingText.length) {
       const timeout = setTimeout(() => {
@@ -20,122 +31,110 @@ const Hero: React.FC = () => {
     }
   }, [typed]);
 
-  // Ladder animation for elements
-  useEffect(() => {
-    const timeouts: any[] = [];
-    [0, 1, 2, 3].forEach((i) => {
-      timeouts.push(
-        setTimeout(() => {
-          setShowLadder((prev) => {
-            const arr = [...prev];
-            arr[i] = true;
-            return arr;
-          });
-        }, 400 + i * 250)
-      );
-    });
-    return () => timeouts.forEach(clearTimeout);
-  }, []);
-
-  // Floating icons random positions
-  const floatingIcons = Array.from({ length: 8 }).map((_, i) => {
-    const Icon = techIcons[i % techIcons.length];
-    const top = Math.random() * 80 + 5;
-    const left = Math.random() * 80 + 5;
-    const duration = Math.random() * 4 + 6;
-    return (
-      <span
-        key={i}
-        className="absolute"
-        style={{
-          top: `${top}%`,
-          left: `${left}%`,
-          animation: `floatY ${duration}s ease-in-out infinite alternate`,
-          opacity: 0.18,
-          fontSize: 38 + Math.random() * 22,
-          zIndex: 1,
-        }}
-      >
-        <Icon color="#6366f1" />
-      </span>
-    );
-  });
+  // Auto-scrolling tech stack strip
+  const stripRef = useRef<HTMLDivElement>(null);
+  // Duplicate icons for seamless loop
+  const iconList = [...techIcons, ...techIcons];
 
   return (
-    <section className="relative  min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-200 via-white to-pink-100">
-      {/* SVG Pattern */}
-      <svg className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }} width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="pattern-circles" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-            <circle cx="40" cy="40" r="36" fill="#f3f4f6" opacity="0.4" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#pattern-circles)" />
-      </svg>
-
-      {/* Floating Tech Icons */}
-      <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
-        {floatingIcons}
-      </div>
-
-      <div className="relative z-20 max-w-3xl w-full mx-auto px-6 py-16 rounded-3xl bg-white/60 backdrop-blur-md shadow-2xl border border-white/40 flex flex-col items-center"
-        style={{ boxShadow: '0 8px 32px 0 rgba(99,102,241,0.18)' }}>
-        {/* Main Heading */}
-        <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 drop-shadow-lg transition-all duration-700 ${showLadder[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          Rajnish Tripathi
-        </h1>
-        {/* Typing Title */}
-        <div className={`flex justify-center w-full transition-all duration-700 ${showLadder[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-indigo-600 mt-2 mb-6 h-12 min-h-[2.5rem] text-center"
-            style={{ fontFamily: 'monospace', letterSpacing: '0.02em', display: 'inline-block' }}
-          >
-            {typed}
-            <span className="animate-pulse">|</span>
-          </span>
+    <section className="relative h-screen min-h-screen flex flex-col justify-center bg-[#181c2a] overflow-hidden">
+      {/* Main Flex Layout */}
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto gap-0 flex-grow h-full px-6 md:px-12">
+        {/* Left Content (do not touch) */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-start h-full md:pr-8 z-10">
+          {/* --- YOUR TEXT SECTION HERE, UNCHANGED --- */}
+          <div className="flex flex-col justify-center h-full w-full">
+            <span className="block text-3xl md:text-4xl font-bold text-white mb-2">
+              Hello<span className="text-red-500 align-middle ml-1">.</span>
+            </span>
+            <div className="flex items-center mb-2">
+              <span className="block w-12 h-1 bg-orange-500 mr-4 rounded-full" />
+              <span className="text-2xl md:text-3xl text-white font-light">I'm Rajnish</span>
+            </div>
+            <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6">
+              Full-Stack & <span className="text-orange-500">Blockchain Developer</span>
+            </span>
+            <div className="flex gap-4 mb-8">
+              <a
+                href="https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-orange-500 hover:bg-orange-400 text-white px-7 py-3 rounded-lg text-lg font-semibold shadow-lg transition-all duration-300"
+              >
+                Got a project?
+              </a>
+              <a
+                href="/RESUME.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-orange-500 text-white px-7 py-3 rounded-lg text-lg font-semibold hover:bg-orange-500/10 transition-all duration-300"
+                download
+              >
+                My resume
+              </a>
+            </div>
+          </div>
         </div>
-        {/* Subheading */}
-        <p className={`text-xl md:text-2xl text-gray-700 max-w-xl mx-auto mb-10 leading-relaxed text-center transition-all duration-700 ${showLadder[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          style={{ textShadow: '0 2px 8px #fff8' }}>
-          I help local businesses and startups build fast, scalable, and user-focused web & mobile solutions.
-        </p>
-        {/* CTA Buttons */}
-        <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-700 ${showLadder[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <a
-            href="https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-indigo-600/90 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-md border border-white/30"
+        {/* Right Image with SVG Ring and Chevrons */}
+        <div className="w-full md:w-1/2 flex items-center justify-center relative h-full min-h-[420px]">
+          {/* Chevrons */}
+          <svg className="absolute left-0 top-[40%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="50,20 10,90 50,160" stroke="#FF5722" strokeWidth="3" fill="none" opacity="0.18" />
+          </svg>
+          <svg className="absolute right-0 top-[80%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="10,20 50,90 10,160" stroke="#FF5722" strokeWidth="3" fill="none" opacity="0.18" />
+          </svg>
+          {/* SVG Ring behind image, centered */}
+          <svg
+            className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
+            width="100%" height="100%" viewBox="0 0 420 420" fill="none"
+            style={{ minWidth: 320, minHeight: 320, maxWidth: 500, maxHeight: 500 }}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Hire Me
-          </a>
-          <a
-            href="/RESUME.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white/80 text-indigo-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-indigo-200 backdrop-blur-md"
-            download
-          >
-            Download CV
-          </a>
-        </div>
-        {/* Location Badge */}
-        <div className="mt-10">
-          <div className="inline-flex items-center px-4 py-2 bg-white/80 rounded-full shadow-md border border-gray-200 backdrop-blur-md">
-            <svg className="w-5 h-5 text-gray-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-            </svg>
-            <span className="text-gray-700 font-medium">Based in Lucknow, India</span>
+            <circle
+              cx="210"
+              cy="210"
+              r="170"
+              stroke="#FF5722"
+              strokeWidth="16"
+              fill="none"
+              opacity="0.7"
+            />
+          </svg>
+          {/* Actual image, bottom-aligned and no circular boundary */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full flex items-end justify-center z-10">
+            <img
+              src="/public/mypic.png"
+              alt="Rajnish Tripathi"
+              className="object-cover h-[85vh] w-auto"
+              draggable={false}
+            />
           </div>
         </div>
       </div>
-      {/* Keyframes for floating icons */}
-      <style>{`
-        @keyframes floatY {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-30px); }
-        }
-      `}</style>
+      {/* Tech Stack Strip (do not touch) mt-8*/}
+      <div className="w-screen  py-4 bg-[#23272f] border-t border-b border-[#232946] overflow-hidden relative px-0">
+        <div
+          ref={stripRef}
+          className="flex items-center gap-10 animate-tech-scroll"
+          style={{ width: 'max-content' }}
+        >
+          {iconList.map(({ Icon, color }, idx) => (
+            <span key={idx} className="mx-4" style={{ minWidth: 40, minHeight: 40 }}>
+              <Icon size={40} color={color} />
+            </span>
+          ))}
+        </div>
+        <style>{`
+          @keyframes tech-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-tech-scroll {
+            animation: tech-scroll 18s linear infinite;
+          }
+        `}</style>
+      </div>
     </section>
   );
 };
