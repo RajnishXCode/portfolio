@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Navbar from '../Navbar';
 import { FaReact, FaEthereum, FaNodeJs, FaGithub, FaDocker, FaAngular, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
 import { SiPython, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { FaLessThan, FaGreaterThan } from "react-icons/fa";
@@ -39,6 +40,8 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen min-h-screen flex flex-col justify-center bg-[#181c2a] overflow-hidden">
+      {/* Navbar at the top */}
+      <Navbar />
       {/* Main Flex Layout */}
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto gap-0 flex-grow h-full px-6 md:px-12">
         {/* Left Content (do not touch) */}
@@ -52,8 +55,8 @@ const Hero: React.FC = () => {
               <span className="block w-12 h-1 bg-orange-500 mr-4 rounded-full" />
               <span className="text-2xl md:text-3xl text-white font-light">I'm Rajnish</span>
             </div>
-            <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6">
-              Full-Stack & <span className="text-orange-500">Blockchain Developer</span>
+            <span className="block text-5xl md:text-3xl lg:text-4xl font-extrabold text-white mb-6">
+              Full-Stack & Blockchain Developer<span className="text-orange-500"></span>
             </span>
             <div className="flex gap-4 mb-8">
               <a
@@ -79,12 +82,6 @@ const Hero: React.FC = () => {
         {/* Right Image with SVG Ring and Chevrons */}
         <div className="w-full md:w-1/2 flex items-center justify-center relative h-full min-h-[420px]">
           {/* Chevrons */}
-          {/* <svg className="absolute left-0 top-[40%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="50,20 10,90 50,160" stroke="#FF5722" strokeWidth="3" fill="none" opacity="0.18" />
-          </svg>
-          <svg className="absolute right-0 top-[80%] -translate-y-1/2 z-0 hidden md:block" width="60" height="120" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="10,20 50,90 10,160" stroke="#FF5722" strokeWidth="3" fill="none" opacity="0.18" />
-          </svg> */}
           <FaLessThan size={100} color="#FF5722" className='absolute -left-5 top-[40%] -translate-y-1/2 z-0 hidden md:block' />
           <FaGreaterThan  size={100} color="#FF5722" className='absolute -right-5 top-[80%] -translate-y-1/2 z-0 hidden md:block' />
 
