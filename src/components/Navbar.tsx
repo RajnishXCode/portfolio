@@ -9,15 +9,17 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className="flex space-x-8">
           <li className="hover:text-orange-400 cursor-pointer transition">
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li className="hover:text-orange-400 cursor-pointer transition">
-            <a href="#about">About</a>
+            <a href="/about">About</a>
           </li>
           <li className="hover:text-orange-400 cursor-pointer transition">
-            <a href="#projects">Projects</a>
+            <a href="/projects">Projects</a>
           </li>
-          <li className="hover:text-orange-400 cursor-pointer transition">Contacts</li>
+          <li className="hover:text-orange-400 cursor-pointer transition">
+            <a href="/contact">Contacts</a>
+          </li>
         </ul>
       </div>
     </nav>

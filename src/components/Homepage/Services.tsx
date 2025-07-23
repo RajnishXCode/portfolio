@@ -24,7 +24,7 @@ const services = [
 
 const Services: React.FC = () => {
   return (
-    <section className="h-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-[#232946] via-[#181c2a] to-[#232946] dark:from-[#232946] dark:via-[#181c2a] dark:to-[#232946] px-6 md:px-12">
+    <section className="h-screen min-h-screen flex items-center justify-center bg-[#181c2a] dark:bg-[#181c2a] px-6 md:px-12">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

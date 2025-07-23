@@ -1,15 +1,18 @@
-// import Hero from './components/Homepage/Hero';
-// import About from './components/Homepage/About';
-// import Services from './components/Homepage/Services';
-// import Portfolio from './components/Homepage/Portfolio';
-// import Pricing from './components/Homepage/Pricing';
-// import Testimonials from './components/Homepage/Testimonials';
+import Aboutpage from './pages/Aboutpage';
 import Homepage from './pages/Homepage';
+import { Routes, Route } from 'react-router-dom';
+import Projectspage from './pages/Projectspage';
+import Contactpage from './pages/Contactpage';
 
 function App() {
   return (
     <>
-      <Homepage />
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/about' element={<Aboutpage />} />
+        <Route path='/projects' element={<Projectspage />} />
+        <Route path='/contact' element={<Contactpage />} />
+      </Routes>
     </>
   );
 }
