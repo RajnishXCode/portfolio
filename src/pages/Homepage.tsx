@@ -12,7 +12,7 @@ function Homepage() {
     <div className="dark min-h-screen w-screen overflow-x-hidden ">
       <Hero />
       <About />
-      <Services />
+      {/* <Services /> */}
       <Portfolio />
       <Pricing />
       <Testimonials />
