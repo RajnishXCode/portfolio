@@ -11,9 +11,9 @@ const projects = [
   },
   {
     title: 'Movie Titles API',
-    description: 'Uses a public movie API to build a collection movie list that sorts from A to Z or vice versa. It also counts how many movies in each container and adds user’s favorite movies into another container.',
+    description: 'Uses a public movie API to build a collection movie list that sorts from A to Z or vice versa. It also counts how many movies in each container and adds user\'s favorite movies into another container.',
     tags: ['HTML', 'CSS', 'Javascript', 'API', 'Version control'],
-    image: 'https://placehold.co/400x300?text=Movie+API',
+    image: 'https://placehold.co/400x300?text=MovieAPI',
     github: '#',
     live: '#',
   },
@@ -29,7 +29,7 @@ const projects = [
     title: 'SaaS Landing Page',
     description: 'Used HTML concepts such as creating a form and a basic skeleton. It also used components of both the grid and flexbox elements to produce a landing page.',
     tags: ['HTML', 'CSS'],
-    image: 'https://placehold.co/400x300?text=SaaS+Landing',
+    image: 'https://placehold.co/400x300?text=SaaSLanding',
     github: '#',
     live: '#',
   },
@@ -37,47 +37,82 @@ const projects = [
 
 const Portfolio: React.FC = () => {
   return (
-    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] px-6 md:px-12 py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] py">
+      <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
-        <div className="mb-12 text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Projects</h2>
-          <div className="w-10 h-1 bg-[#FF6B35] rounded mb-6"></div>
+        <div className="flex flex-col items-center mb-20">
+          <h2 className="text-4xl font-bold text-white text-center mb-4">Projects</h2>
+          <div className="relative">
+            <div className="h-16 w-1 bg-[#FF6B35] mx-auto"></div>
+            <div className="absolute bottom-0 left-1/2 transform translate-x-[-40%] translate-y-4 h-2 w-2 bg-[#FF6B35] rounded-full"></div>
+          </div>
         </div>
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        {/* Projects List */}
+        <div className="space-y-32 mt-16">
           {projects.map((project, idx) => (
-            <div key={idx} className="bg-white/5 border border-[#FF6B35]/10 rounded-2xl p-6 flex flex-col md:flex-row gap-6 shadow-lg">
-              {/* Image */}
-              <div className="flex-shrink-0 w-full md:w-48 flex items-center justify-center bg-[#181c2a] rounded-xl overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-32 object-cover rounded-xl" />
-              </div>
-              {/* Details */}
-              <div className="flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">{project.title}</h4>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="bg-[#FF6B35]/20 text-[#FF6B35] text-xs font-semibold px-3 py-1 rounded-full border border-[#FF6B35]/30">{tag}</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+            <div 
+              key={idx} 
+              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16`}
+            >
+              {/* Project Content */}
+              <div className="lg:w-1/2 flex flex-col justify-center">
+                <h3 className="text-2xl font-bold text-white mb-6">{project.title}</h3>
+                
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map((tag, i) => (
+                    <span 
+                      key={i} 
+                      className="px-3 py-1 text-xs font-medium bg-transparent border border-gray-600 text-gray-300 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                <div className="flex gap-3 mt-2">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="bg-[#FF6B35] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#e85c2a] transition-all">View Github</a>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="border border-[#FF6B35]/40 text-[#FF6B35] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FF6B35]/10 transition-all flex items-center gap-1">View project <span className="ml-1">→</span></a>
+                
+                <p className="text-gray-300 mb-8">{project.description}</p>
+                
+                <div className="flex gap-5">
+                  <a 
+                    href={project.github} 
+                    className="bg-[#FF6B35] text-white px-5 py-2 rounded text-sm font-medium hover:bg-[#e85c2a] transition-all"
+                  >
+                    View GitHub
+                  </a>
+                  <a 
+                    href={project.live}
+                    className="border border-gray-600 text-white px-5 py-2 rounded text-sm font-medium hover:bg-gray-800 transition-all flex items-center gap-1"
+                  >
+                    View project <span className="ml-1">→</span>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Project Image */}
+              <div className="lg:w-1/2 flex items-center justify-center">
+                <div className={`relative w-full ${idx % 2 === 0 ? 'flex justify-end' : 'flex justify-start'}`}>
+                  {/* Shadow box behind content */}
+                  <div className={`absolute w-5/6 h-full rounded-lg border border-2 border-gray-700 shadow-lg
+                    ${idx % 2 === 0 ? 'transform translate-x-3 -translate-y-3' : 'transform -translate-x-3 -translate-y-3'}`}>
+                  </div>
+                  
+                  {/* Main content (image) */}
+                  <div className={`relative z-10 overflow-hidden rounded-lg w-5/6 border border-gray-700 shadow-lg
+                    ${idx % 2 === 0 ? 'mr-0' : 'ml-0'}`}>
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-72 object-cover object-center"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        {/* See More Button */}
-        <div className="flex justify-center mt-12">
-          <button className="bg-[#FF6B35] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#e85c2a] transition-all shadow-lg">See More</button>
         </div>
       </div>
     </section>
   );
 };
 
-export default Portfolio; 
+export default Portfolio;
