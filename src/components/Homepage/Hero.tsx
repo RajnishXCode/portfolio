@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
           {/* Actual image, bottom-aligned and no circular boundary */}
           <div className="absolute bottom-0 left-[55%] -translate-x-1/2 w-full h-full flex items-end justify-center z-20">
             <img
-              src="/public/mypic.png"
+              src="/mypic.png"
               alt="Rajnish Tripathi"
               className="object-cover h-[85vh] w-auto"
               draggable={false}
