@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaReact, FaMobileAlt, FaServer, FaEthereum, FaBolt, FaPalette, FaHandsHelping } from 'react-icons/fa';
+import { FaReact, FaMobileAlt, FaServer, FaEthereum, FaBolt, FaPalette } from 'react-icons/fa';
 
 const services = [
   {

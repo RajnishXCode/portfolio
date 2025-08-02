@@ -3,14 +3,17 @@ import { FaCode, FaMobileAlt, FaEthereum } from 'react-icons/fa';
 
 const timeline = [
   {
+    id: 1,
     title: 'Website Development',
     icon: FaCode,
   },
   {
+    id: 2,
     title: 'Mobile App Development',
     icon: FaMobileAlt,
   },
   {
+    id: 3,
     title: 'Blockchain Development',
     icon: FaEthereum,
   },
@@ -25,10 +28,10 @@ const About: React.FC = () => {
           {/* Vertical Line */}
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-[#FF6B35] z-0" style={{height: '100%'}}></div>
           <div className="flex flex-col justify-between h-full" style={{ minHeight: '220px' }}>
-            {timeline.map((item, idx) => {
+            {timeline.map((item, id) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="flex items-center relative z-10 min-h-[64px]">
+                <div key={id} className="flex items-center relative z-10 min-h-[64px]">
                   {/* Icon in Orange Circle, centered on the line */}
                   <span className="-ml-[2px] flex items-center justify-center w-10 h-10 rounded-full bg-[#FF6B35] shadow-md absolute left-4 top-1/2 -translate-y-1/2">
                     <Icon size={22} className="text-white" />
