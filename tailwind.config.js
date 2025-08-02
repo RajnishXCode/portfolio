@@ -1,10 +1,7 @@
-module.exports = {
+export default {
   darkMode: 'class', // Enable dark mode via class
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Mooxy', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
-      },
-    },
-  },
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
 }; 

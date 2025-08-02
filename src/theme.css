@@ -1,0 +1,6 @@
+@theme {
+  --font-family-sans: 'Mooxy', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --color-primary: #181c2a;
+  --color-secondary: #FF5722;
+  --color-accent: #3848ab;
+}

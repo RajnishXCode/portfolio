@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "./theme.css";
+
+
 
 /* Prevent unwanted scrollbars and overflow */
 html, body {
@@ -50,9 +53,6 @@ button:focus-visible {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   button {
     background-color: #f9f9f9;
