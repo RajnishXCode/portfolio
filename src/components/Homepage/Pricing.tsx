@@ -94,7 +94,7 @@ const Pricing = () => {
                 {/* CTA Button */}
                 <div
                   onClick={() => ctaHandler(plan.name)}
-                  className="w-full py-3 px-6 rounded-lg text-center font-semibold transition-all duration-300 bg-secondary hover:bg-accent text-white transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full py-3 px-6 rounded-lg text-center font-semibold transition-all duration-300 bg-secondary hover:bg-secondary/80 text-white transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   {plan.cta}
                 </div>
@@ -114,7 +114,7 @@ const Pricing = () => {
             </p>
             <div
               onClick={() => ctaHandler("Custom Solution")}
-              className="bg-secondary text-white max-w-md mx-auto px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-secondary text-white max-w-md mx-auto px-8 py-4 rounded-lg text-lg font-semibold hover:bg-secondary/80 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {customSolutionButtonText}
             </div>

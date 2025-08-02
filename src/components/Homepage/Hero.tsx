@@ -1,90 +1,62 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 import Navbar from '../Navbar';
-import { FaReact, FaEthereum, FaNodeJs, FaGithub, FaDocker, FaAngular, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
-import { SiPython, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { FaLessThan, FaGreaterThan } from "react-icons/fa";
+import { techIcons, heroData, encodeCtaMessage, ctaLink } from '../../constants/heroData';
 
-const techIcons = [
-  { Icon: FaHtml5, color: '#E44D26' },
-  { Icon: FaCss3Alt, color: '#1572B6' },
-  { Icon: FaJsSquare, color: '#F7DF1E' },
-  { Icon: FaReact, color: '#61DAFB' },
-  { Icon: FaNodeJs, color: '#3C873A' },
-  { Icon: FaAngular, color: '#DD0031' },
-  { Icon: SiPython, color: '#3776AB' },
-  { Icon: FaEthereum, color: '#627EEA' },
-  { Icon: FaGithub, color: '#fff' },
-  { Icon: FaDocker, color: '#2496ED' },
-  { Icon: SiTypescript, color: '#3178C6' },
-  { Icon: SiTailwindcss, color: '#38BDF8' },
-];
-
-const Hero: React.FC = () => {
-  // Typing animation state
-  const [typed, setTyped] = useState('');
-  const typingText = 'Blockchain Developer';
-
-  useEffect(() => {
-    if (typed.length < typingText.length) {
-      const timeout = setTimeout(() => {
-        setTyped((prev) => prev + typingText[typed.length]);
-      }, 60);
-      return () => clearTimeout(timeout);
-    }
-  }, [typed]);
+const Hero = () => {
 
   // Auto-scrolling tech stack strip
   const stripRef = useRef<HTMLDivElement>(null);
   // Duplicate icons for seamless loop
   const iconList = [...techIcons, ...techIcons];
 
+  const handleCTA = () => {
+    const message = encodeCtaMessage();
+    window.open(`${ctaLink}${message}`, '_blank');
+  };
+
   return (
-    <section className="relative h-screen min-h-screen flex flex-col justify-center bg-[#181c2a] overflow-hidden">
-      {/* Navbar at the top */}
+    <section className="relative h-screen min-h-screen flex flex-col justify-center bg-primary overflow-hidden">
       <Navbar />
-      {/* Main Flex Layout */}
+
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto gap-0 flex-grow h-full px-6 md:px-12">
-        {/* Left Content (do not touch) */}
+
         <div className="w-full md:w-1/2 flex flex-col justify-center items-start h-full md:pr-8 z-10">
-          {/* --- YOUR TEXT SECTION HERE, UNCHANGED --- */}
           <div className="flex flex-col justify-center h-full w-full">
             <span className="block text-3xl md:text-4xl font-bold text-white mb-2">
-              Hello<span className="text-red-500 align-middle ml-1">.</span>
+              {heroData.greeting}<span className="text-red-500 align-middle ml-1">.</span>
             </span>
             <div className="flex items-center mb-2">
-              <span className="block w-12 h-1 bg-orange-500 mr-4 rounded-full" />
-              <span className="text-2xl md:text-3xl text-white font-light">I'm Rajnish</span>
+              <span className="block w-12 h-1 bg-secondary mr-4 rounded-full" />
+              <span className="text-2xl md:text-3xl text-white font-light">{heroData.contraction} {heroData.name}</span>
             </div>
             <span className="block text-5xl md:text-3xl lg:text-4xl font-extrabold text-white mb-6">
-              Full-Stack & Blockchain Developer<span className="text-orange-500"></span>
+              {heroData.title}<span className="text-orange-500"></span>
             </span>
             <div className="flex gap-4 mb-8">
-              <a
-                href="https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-orange-500 hover:bg-orange-400 text-white px-7 py-3 rounded-lg text-lg font-semibold shadow-lg transition-all duration-300"
+              <div
+                onClick={handleCTA}
+                className="bg-secondary hover:cursor-pointer hover:bg-secondary/80 text-white px-7 py-3 rounded-lg text-lg font-semibold shadow-lg transition-all duration-300"
               >
-                Got a project?
-              </a>
+                {heroData.buttons.project}
+              </div>
               <a
-                href="/RESUME.pdf"
+                href={heroData.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-orange-500 text-white px-7 py-3 rounded-lg text-lg font-semibold hover:bg-orange-500/10 transition-all duration-300"
                 download
               >
-                My resume
+                {heroData.buttons.resume}
               </a>
             </div>
           </div>
         </div>
-        {/* Right Image with SVG Ring and Chevrons */}
+
         <div className="w-full md:w-1/2 flex items-center justify-center relative h-full min-h-[420px]">
           {/* Chevrons */}
-          <FaLessThan size={100} color="#FF5722" className='absolute -left-5 top-[40%] -translate-y-1/2 z-0 hidden md:block' />
-          <FaGreaterThan  size={100} color="#FF5722" className='absolute -right-5 top-[80%] -translate-y-1/2 z-0 hidden md:block' />
-
+          <FaLessThan size={100} className='text-secondary/70 absolute -left-5 top-[40%] -translate-y-1/2 z-0 hidden md:block' />
+          <FaGreaterThan  size={100} className='text-secondary/70 absolute -right-5 top-[80%] -translate-y-1/2 z-0 hidden md:block' />
 
           {/* SVG Ring behind image, centered, with gradient stroke */}
           <svg
@@ -95,9 +67,9 @@ const Hero: React.FC = () => {
           >
             <defs>
               <linearGradient id="ring-gradient" x1="210" y1="40" x2="210" y2="380" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#FF5722" stopOpacity="1" />
-                <stop offset="70%" stopColor="#FF5722" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#FF5722" stopOpacity="0.1" />
+                <stop offset="0%" stopColor="var(--color-secondary)" stopOpacity="1" />
+                <stop offset="70%" stopColor="var(--color-secondary)" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="var(--color-secondary)" stopOpacity="0.1" />
               </linearGradient>
             </defs>
             <circle
@@ -113,16 +85,17 @@ const Hero: React.FC = () => {
           {/* Actual image, bottom-aligned and no circular boundary */}
           <div className="absolute bottom-0 left-[55%] -translate-x-1/2 w-full h-full flex items-end justify-center z-20">
             <img
-              src="/mypic.png"
-              alt="Rajnish Tripathi"
+              src={heroData.profileImage}
+              alt={heroData.profileImageAlt}
               className="object-cover h-[85vh] w-auto"
               draggable={false}
             />
           </div>
         </div>
       </div>
-      {/* Tech Stack Strip (do not touch) mt-8*/}
-      <div className="w-screen  py-4 bg-[#23272f] border-t border-b border-[#232946] overflow-hidden relative px-0">
+
+      {/* Tech Stack Strip */}
+      <div className="w-screen  py-4 bg-background border-t border-b border-[#232946] overflow-hidden relative px-0">
         <div
           ref={stripRef}
           className="flex items-center gap-10 animate-tech-scroll"
@@ -148,4 +121,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
