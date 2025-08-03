@@ -51,7 +51,7 @@ export const stats: Stat[] = [
     label: "Years Experience"
   },
   {
-    value: "95%",
+    value: "98%",
     label: "Client Satisfaction"
   }
 ];

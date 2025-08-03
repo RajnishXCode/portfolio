@@ -7,4 +7,8 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+  server: {
+    allowedHosts: ['localhost', 'cosmic-certainly-tahr.ngrok-free.app'],
+  },
+  
 })
