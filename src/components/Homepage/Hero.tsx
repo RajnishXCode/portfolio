@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import Navbar from '../Navbar';
 import { FaLessThan, FaGreaterThan } from "react-icons/fa";
-import { techIcons, heroData, encodeCtaMessage, ctaLink } from '../../constants/heroData';
+import { techIcons, heroData, encodeCtaMessage } from '../../constants/heroData';
+import { ctaLink } from '../../constants/globalData';
 
 const Hero = () => {
 

@@ -1,10 +1,10 @@
+import { ctaLink } from "../../constants/globalData";
 import {
   sectionTitle,
   sectionDescription1,
   sectionDescription2,
   pricingPlans,
   popularBadge,
-  ctaLink,
   encodeCtaMessage,
   customSolutionTitle,
   customSolutionDescription1,

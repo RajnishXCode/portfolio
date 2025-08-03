@@ -6,7 +6,6 @@ export const sectionDescription2 = 'All plans include consultation and project m
 export const popularBadge = 'Most Popular';
 
 export const ctaMessage = 'Hi Rajnish, I would like to discuss the ';
-export const ctaLink = 'https://wa.me/7309882920?text='
 
 export const encodeCtaMessage = (planName: string) => {
     return encodeURIComponent(`${ctaMessage}${planName} plan`);

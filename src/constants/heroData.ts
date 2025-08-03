@@ -27,8 +27,6 @@ export const heroData = {
   contraction : 'I\'m',
   name: 'Rajnish',
   title: 'Full-Stack & Blockchain Developer',
-  // whatsappNumber: '+918800000000',
-  // whatsappMessage: 'Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project',
   resumePath: '/RESUME.pdf',
   profileImage: '/mypic.png',
   profileImageAlt: 'Rajnish Tripathi',
@@ -38,8 +36,7 @@ export const heroData = {
   }
 };
 
-export const ctaMessage = 'Hi Rajnish, I would like to discuss a project. ';
-export const ctaLink = 'https://wa.me/7309882920?text='
+export const ctaMessage = 'Hi Rajnish, I got a project for you!';
 
 export const encodeCtaMessage = () => {
     return encodeURIComponent(`${ctaMessage}`);
