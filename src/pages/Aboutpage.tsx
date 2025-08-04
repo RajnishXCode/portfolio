@@ -138,24 +138,20 @@ function Aboutpage() {
 
       {/* Personal Story Section with Premium Design */}
       <section className="w-full max-w-6xl mx-auto px-4 md:px-8 py-20 relative z-10">
-        <div className="relative">
-          {/* Enhanced background with multiple layers */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/8 to-white/5 backdrop-blur-sm rounded-3xl border border-white/10 shadow-2xl hover:shadow-accent/30 transition-all duration-500"></div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-secondary/5 via-transparent to-orange-500/5 rounded-3xl"></div>
-          
+        <div className="bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 dark:border-white/20 hover:border-secondary">
           {/* Content */}
-          <div className="relative z-10 p-8 md:p-12">
+          <div className="p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center gap-12 ">
               <div className="md:w-1/3 relative">
-                {/* Elite Profile Avatar with Advanced Effects */}
+                {/* Profile Avatar with Orbital Effects */}
                 <div className="relative group perspective-1000">
-                  {/* Main Avatar Container with Perfect Layering */}
+                  {/* Main Avatar Container */}
                   <div className="relative w-48 h-48 mx-auto rounded-full border-4 border-white/10 backdrop-blur-sm group-hover:scale-105 transition-all duration-700 ease-out overflow-hidden shadow-2xl group-hover:shadow-secondary/20">
                     {/* Multi-layered backdrop effects */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/10 to-white/5 rounded-full"></div>
                     <div className="absolute inset-0 bg-gradient-to-tr from-secondary/5 via-transparent to-orange-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
-                    {/* Profile Image with Perfect Optimization */}
+                    {/* Profile Image */}
                     <img 
                       src="/mypic.png" 
                       alt="Rajnish - Software Developer" 
@@ -170,7 +166,7 @@ function Aboutpage() {
                       }}
                     />
                     
-                    {/* Enhanced Fallback Icon */}
+                    {/* Fallback Icon */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 z-10">
                       <FaCode className="text-6xl text-secondary group-hover:text-orange-500 transition-colors duration-500 drop-shadow-lg" />
                     </div>
@@ -227,18 +223,6 @@ function Aboutpage() {
                     <div className="relative">
                       <div className="absolute inset-0 bg-green-500 rounded-full blur-sm animate-pulse"></div>
                       <div className="relative w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Badge */}
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-2 group-hover:translate-y-0">
-                    <div className="relative">
-                      <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-orange-500 rounded-full blur opacity-60"></div>
-                      <div className="relative bg-primary/90 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 shadow-xl">
-                        <span className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
-                          Available for Projects
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -303,30 +287,21 @@ function Aboutpage() {
             {careerTimeline.map((item, index) => (
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:flex-row`}>
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                  <div className="group relative">
-                    {/* Card Background with Multiple Layers */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-sm rounded-2xl border border-white/10 group-hover:border-secondary/30 group-hover:shadow-accent/30 transition-all duration-500"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
+                  <div className="bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 dark:border-white/20 hover:border-secondary">
                     {/* Content */}
-                    <div className="relative z-10 p-8 group-hover:transform group-hover:scale-[1.02] transition-transform duration-500">
+                    <div className="p-8">
                       <div className="flex items-center mb-6">
                         <div className="relative mr-6">
-                          <div className="absolute -inset-2 bg-gradient-to-r from-secondary to-orange-500 rounded-full blur opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div>
-                          <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-secondary/20 to-orange-500/20 flex items-center justify-center border border-white/20 backdrop-blur-sm">
-                            <item.icon className="text-secondary text-2xl group-hover:text-orange-500 transition-colors duration-300" />
+                          <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-secondary/20 to-orange-500/20 flex items-center justify-center border border-white/20">
+                            <item.icon className="text-secondary text-2xl" />
                           </div>
                         </div>
                         <div>
-                          <div className="text-secondary font-bold text-xl mb-1 group-hover:text-orange-500 transition-colors duration-300">{item.year}</div>
+                          <div className="text-secondary font-bold text-xl mb-1">{item.year}</div>
                           <div className="text-white font-semibold text-lg">{item.title}</div>
                         </div>
                       </div>
-                      <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">{item.description}</p>
-                      
-                      {/* Decorative corner elements */}
-                      <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <p className="text-gray-300 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -359,39 +334,21 @@ function Aboutpage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {visionGoals.map((goal, index) => (
-            <div key={index} className="group relative">
-              {/* Background layers with depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-sm rounded-2xl border border-white/10 group-hover:border-secondary/30 hover:shadow-accent/30 transition-all duration-500"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-orange-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Floating effect */}
-              <div className="relative z-10 p-8 group-hover:transform group-hover:-translate-y-2 transition-all duration-500 h-full">
-                <div className="text-center mb-8">
+            <div key={index} className="bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 dark:border-white/20 hover:border-secondary">
+              <div className="p-8 text-center">
+                <div className="mb-8">
                   <div className="relative inline-block mb-6">
-                    {/* Icon container with multiple effects */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-secondary via-orange-500 to-secondary rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                    <div className="relative w-24 h-24 mx-auto bg-gradient-to-br from-secondary/20 via-orange-500/10 to-secondary/20 rounded-full flex items-center justify-center border-2 border-white/10 backdrop-blur-sm group-hover:border-secondary/30 transition-all duration-500">
-                      <div className="absolute inset-2 bg-gradient-to-br from-secondary/10 to-orange-500/10 rounded-full group-hover:from-secondary/20 group-hover:to-orange-500/20 transition-all duration-500"></div>
-                      <goal.icon className="text-secondary text-3xl relative z-10 group-hover:text-orange-500 transition-colors duration-500" />
+                    <div className="w-24 h-24 mx-auto bg-gradient-to-br from-secondary/20 via-orange-500/10 to-secondary/20 rounded-full flex items-center justify-center border-2 border-white/10">
+                      <goal.icon className="text-secondary text-3xl" />
                     </div>
-                    
-                    {/* Orbital elements */}
-                    <div className="absolute inset-0 border border-secondary/10 rounded-full animate-spin opacity-30 group-hover:opacity-60 transition-opacity duration-500" style={{animationDuration: '10s'}}></div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-6 group-hover:text-secondary transition-colors duration-300">{goal.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-6">{goal.title}</h3>
                 </div>
                 
-                <div className="relative">
-                  <p className="text-gray-300 leading-relaxed text-center group-hover:text-white transition-colors duration-300">{goal.description}</p>
-                  
-                  {/* Subtle accent line */}
-                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-secondary to-orange-500 group-hover:w-16 transition-all duration-500"></div>
+                <div>
+                  <p className="text-gray-300 leading-relaxed text-center">{goal.description}</p>
                 </div>
-                
-                {/* Corner decorations */}
-                <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           ))}
@@ -412,70 +369,36 @@ function Aboutpage() {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {collaborationStyle.map((style, index) => (
-            <div key={index} className="group relative">
-              {/* Multi-layered background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/4 to-white/8 backdrop-blur-sm rounded-2xl border border-white/10 group-hover:border-secondary/30 hover:shadow-accent/30 transition-all duration-500"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-secondary/20 to-orange-500/20 rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10 p-10 text-center group-hover:transform group-hover:scale-[1.02] transition-transform duration-500">
+            <div key={index} className="bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 dark:border-white/20 hover:border-secondary">
+              <div className="p-10 text-center">
                 <div className="mb-8">
-                  {/* Enhanced icon design */}
                   <div className="relative inline-block">
-                    <div className="absolute -inset-6 bg-gradient-to-r from-secondary via-orange-500 to-secondary rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-secondary/20 via-orange-500/10 to-secondary/20 rounded-full flex items-center justify-center border-2 border-white/20 backdrop-blur-sm group-hover:border-secondary/40 transition-all duration-500 mx-auto">
-                      <div className="absolute inset-2 bg-gradient-to-br from-secondary/10 to-orange-500/10 rounded-full group-hover:from-secondary/20 group-hover:to-orange-500/20 transition-all duration-500"></div>
-                      <style.icon className="text-secondary text-2xl relative z-10 group-hover:text-orange-500 transition-colors duration-500" />
+                    <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 via-orange-500/10 to-secondary/20 rounded-full flex items-center justify-center border-2 border-white/20 mx-auto">
+                      <style.icon className="text-secondary text-2xl" />
                     </div>
-                    
-                    {/* Rotating rings */}
-                    <div className="absolute inset-0 border border-secondary/10 rounded-full animate-spin opacity-20 group-hover:opacity-40 transition-opacity duration-500" style={{animationDuration: '15s'}}></div>
-                    <div className="absolute inset-2 border border-orange-500/10 rounded-full animate-spin opacity-20 group-hover:opacity-40 transition-opacity duration-500" style={{animationDuration: '10s', animationDirection: 'reverse'}}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors duration-300">{style.title}</h3>
+                  <h3 className="text-xl font-bold text-white">{style.title}</h3>
                   
-                  <div className="relative">
-                    <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">{style.description}</p>
-                    
-                    {/* Decorative quote marks */}
-                    <div className="absolute -top-2 -left-2 text-secondary/20 text-2xl font-bold group-hover:text-secondary/40 transition-colors duration-300">"</div>
-                    <div className="absolute -bottom-2 -right-2 text-orange-500/20 text-2xl font-bold group-hover:text-orange-500/40 transition-colors duration-300">"</div>
+                  <div>
+                    <p className="text-gray-300 leading-relaxed">{style.description}</p>
                   </div>
                 </div>
-                
-                {/* Elegant corner accents */}
-                <div className="absolute top-6 left-6 w-6 h-6 border-t-2 border-l-2 border-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-tl-lg"></div>
-                <div className="absolute bottom-6 right-6 w-6 h-6 border-b-2 border-r-2 border-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-br-lg"></div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Premium Call to Action Section */}
+      {/* Call to Action Section */}
       <section className="w-full max-w-6xl mx-auto px-4 md:px-8 py-20 relative z-10">
-        <div className="relative">
-          {/* Luxurious background with multiple layers */}
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 via-orange-500/10 to-secondary/10 backdrop-blur-sm rounded-3xl border border-white/20 hover:shadow-accent/30 transition-all duration-500"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 rounded-3xl"></div>
-          
-          {/* Animated background elements */}
-          <div className="absolute top-8 right-8 w-32 h-32 bg-gradient-to-br from-secondary/10 to-orange-500/10 rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-8 left-8 w-24 h-24 bg-gradient-to-br from-orange-500/10 to-secondary/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          
-          <div className="relative z-10 p-12 text-center">
+        <div className="bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 border-white/20 dark:border-white/20 hover:border-secondary">
+          <div className="p-12 text-center">
             <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">Amazing</span> Together
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent rounded-full"></div>
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full"></div>
               </h2>
               
               <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -485,30 +408,15 @@ function Aboutpage() {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               {/* Primary CTA Button */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-secondary via-orange-500 to-secondary rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-                <button className="relative bg-gradient-to-r from-secondary to-orange-500 hover:from-orange-500 hover:to-secondary text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-2xl transition-all duration-500 group-hover:transform group-hover:scale-105 group-hover:shadow-3xl">
-                  <span className="relative z-10">Start a Project</span>
-                  <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
-              </div>
+              <a href='#' className="bg-secondary text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-secondary/80 transition-all duration-300">
+                Start a Project
+              </a>
               
               {/* Secondary CTA Button */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-secondary/50 to-orange-500/50 rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-                <button className="relative border-2 border-transparent bg-gradient-to-r from-secondary to-orange-500 p-0.5 rounded-xl group-hover:shadow-xl transition-all duration-300">
-                  <div className="bg-primary px-10 py-4 rounded-lg group-hover:bg-primary/80 transition-colors duration-300">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500 text-lg font-semibold">View My Work</span>
-                  </div>
-                </button>
-              </div>
+              <a href='#' className="border border-secondary text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-secondary/80 transition-all duration-30">
+                View My Work
+              </a>
             </div>
-            
-            {/* Decorative corner elements */}
-            <div className="absolute top-8 left-8 w-8 h-8 border-t-2 border-l-2 border-secondary/30 rounded-tl-2xl"></div>
-            <div className="absolute top-8 right-8 w-8 h-8 border-t-2 border-r-2 border-orange-500/30 rounded-tr-2xl"></div>
-            <div className="absolute bottom-8 left-8 w-8 h-8 border-b-2 border-l-2 border-orange-500/30 rounded-bl-2xl"></div>
-            <div className="absolute bottom-8 right-8 w-8 h-8 border-b-2 border-r-2 border-secondary/30 rounded-br-2xl"></div>
           </div>
         </div>
       </section>

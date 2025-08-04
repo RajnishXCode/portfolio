@@ -45,7 +45,7 @@ const Hero = () => {
                 href={heroData.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-orange-500 text-white px-7 py-3 rounded-lg text-lg font-semibold hover:bg-orange-500/10 transition-all duration-300"
+                className="border border-secondary text-white px-7 py-3 rounded-lg text-lg font-semibold hover:bg-secondary/80 transition-all duration-300"
                 download
               >
                 {heroData.buttons.resume}
