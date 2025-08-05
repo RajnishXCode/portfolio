@@ -1,11 +1,5 @@
 import React from 'react';
-import { FaCode, FaDatabase, FaMobile, FaGlobe, FaRocket } from 'react-icons/fa';
-
-interface Category {
-  id: string;
-  label: string;
-  icon: React.ComponentType<any>;
-}
+import { projectCategories, projectFilterSection } from '../../constants/Projectspage/projectsData';
 
 interface ProjectFilterProps {
   activeFilter: string;
@@ -13,24 +7,18 @@ interface ProjectFilterProps {
 }
 
 const ProjectFilter: React.FC<ProjectFilterProps> = ({ activeFilter, setActiveFilter }) => {
-  const categories: Category[] = [
-    { id: 'all', label: 'All Projects', icon: FaCode },
-    { id: 'fullstack', label: 'Full Stack', icon: FaGlobe },
-    { id: 'blockchain', label: 'Blockchain', icon: FaRocket },
-    { id: 'mobile', label: 'Mobile', icon: FaMobile },
-    { id: 'desktop', label: 'Desktop', icon: FaDatabase },
-    { id: 'tools', label: 'Tools', icon: FaCode }
-  ];
-
   return (
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-        All <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">Projects</span>
+        {projectFilterSection.title.replace(projectFilterSection.highlightText, '')}{' '}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">
+          {projectFilterSection.highlightText}
+        </span>
       </h2>
       
       {/* Enhanced Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
-        {categories.map((category) => (
+        {projectCategories.map((category) => (
           <button
             key={category.id}
             onClick={() => setActiveFilter(category.id)}

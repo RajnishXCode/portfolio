@@ -1,3 +1,5 @@
+import { FaCode, FaDatabase, FaMobile, FaGlobe, FaRocket } from 'react-icons/fa';
+
 export interface Project {
   id: number;
   title: string;
@@ -14,6 +16,65 @@ export interface Project {
   duration: string;
   teamSize: string;
 }
+
+// Projects Hero Data
+export const projectsHero = {
+  title: 'My Projects',
+  highlightText: 'Projects',
+  description: 'A showcase of my development journey - from full-stack web applications to blockchain solutions and mobile apps. Each project represents a unique challenge and learning experience.'
+};
+
+// Featured Projects Data
+export const featuredProjectsSection = {
+  title: 'Featured Projects',
+  highlightText: 'Projects'
+};
+
+// Project Filter Categories
+export interface Category {
+  id: string;
+  label: string;
+  icon: React.ComponentType<any>;
+}
+
+export const projectCategories: Category[] = [
+  { id: 'all', label: 'All Projects', icon: FaCode },
+  { id: 'fullstack', label: 'Full Stack', icon: FaGlobe },
+  { id: 'blockchain', label: 'Blockchain', icon: FaRocket },
+  { id: 'mobile', label: 'Mobile', icon: FaMobile },
+  { id: 'desktop', label: 'Desktop', icon: FaDatabase },
+  { id: 'tools', label: 'Tools', icon: FaCode }
+];
+
+export const projectFilterSection = {
+  title: 'All Projects',
+  highlightText: 'Projects'
+};
+
+// Projects CTA Data
+export const projectsCTA = {
+  title: 'Interested in Collaborating?',
+  highlightText: 'Collaborating?',
+  description: 'I\'m always excited to work on new projects and explore innovative solutions. Let\'s discuss how we can bring your ideas to life!',
+  buttons: [
+    {
+      type: 'primary',
+      text: 'Start a Project',
+      href: 'https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      icon: 'rocket'
+    },
+    {
+      type: 'secondary',
+      text: 'View Resume',
+      href: '/RESUME.pdf',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      icon: 'external'
+    }
+  ]
+};
 
 export const projectsData: Project[] = [
   {

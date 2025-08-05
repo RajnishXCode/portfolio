@@ -1,37 +1,16 @@
 import React from 'react';
-import { FaRocket, FaEye, FaHeart } from 'react-icons/fa';
-
-interface VisionGoal {
-  icon: React.ComponentType<any>;
-  title: string;
-  description: string;
-}
+import { visionGoals, visionGoalsHeader } from '../../constants/Aboutpage/aboutData';
 
 const VisionGoals: React.FC = () => {
-  const visionGoals: VisionGoal[] = [
-    {
-      icon: FaRocket,
-      title: "Innovation Leader",
-      description: "Become a recognized expert in cutting-edge technologies like AI, blockchain, and modern web frameworks."
-    },
-    {
-      icon: FaEye,
-      title: "Impactful Solutions",
-      description: "Create software that solves real-world problems and makes a meaningful difference in people's lives."
-    },
-    {
-      icon: FaHeart,
-      title: "Tech Community",
-      description: "Contribute to open-source projects and mentor aspiring developers in their coding journey."
-    }
-  ];
-
   return (
     <section className="w-full max-w-6xl mx-auto px-4 md:px-8 py-20 relative z-10">
       <div className="text-center mb-20">
         <div className="relative inline-block">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Vision & <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">Goals</span>
+            {visionGoalsHeader.title.replace(visionGoalsHeader.highlightText, '')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
+              {visionGoalsHeader.highlightText}
+            </span>
           </h2>
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-secondary to-orange-500 rounded-full"></div>
         </div>

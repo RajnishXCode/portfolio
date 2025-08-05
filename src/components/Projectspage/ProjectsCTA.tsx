@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRocket, FaExternalLinkAlt } from 'react-icons/fa';
+import { projectsCTA } from '../../constants/Projectspage/projectsData';
 
 const ProjectsCTA: React.FC = () => {
   return (
@@ -19,42 +20,43 @@ const ProjectsCTA: React.FC = () => {
           <div className="relative p-12 text-center">
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Interested in <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">Collaborating?</span>
+                {projectsCTA.title.replace(projectsCTA.highlightText, '')}{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">
+                  {projectsCTA.highlightText}
+                </span>
               </h2>
               <div className="w-24 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                I'm always excited to work on new projects and explore innovative solutions. Let's discuss how we can bring your ideas to life!
+                {projectsCTA.description}
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a
-                href="https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn relative bg-secondary text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/25 overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  <FaRocket className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  Start a Project
-                </span>
-                {/* Animated background effect */}
-                <div className="absolute inset-0 bg-secondary/80 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-              </a>
-              
-              <a
-                href="/RESUME.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn relative border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  <FaExternalLinkAlt className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  View Resume
-                </span>
-                {/* Hover background */}
-                <div className="absolute inset-0 bg-secondary opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-              </a>
+              {projectsCTA.buttons.map((button, index) => {
+                const IconComponent = button.icon === 'rocket' ? FaRocket : FaExternalLinkAlt;
+                return (
+                  <a
+                    key={index}
+                    href={button.href}
+                    target={button.target}
+                    rel={button.rel}
+                    className={`group/btn relative ${
+                      button.type === 'primary'
+                        ? 'bg-secondary text-white hover:shadow-2xl hover:shadow-secondary/25'
+                        : 'border-2 border-secondary text-secondary hover:bg-secondary hover:text-white backdrop-blur-sm'
+                    } px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 overflow-hidden`}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      <IconComponent className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      {button.text}
+                    </span>
+                    {/* Animated background effect */}
+                    <div className={`absolute inset-0 ${
+                      button.type === 'primary' ? 'bg-secondary/80' : 'bg-secondary'
+                    } opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300`}></div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

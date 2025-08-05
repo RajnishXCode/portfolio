@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaExternalLinkAlt, FaClock, FaUsers, FaRocket, FaStar } from 'react-icons/fa';
+import { featuredProjectsSection } from '../../constants/Projectspage/projectsData';
 
 interface Project {
   id: number;
@@ -29,7 +30,10 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
     <section className="w-full max-w-6xl mx-auto px-4 md:px-8 py-16 relative z-10">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">Projects</span>
+          {featuredProjectsSection.title.replace(featuredProjectsSection.highlightText, '')}{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">
+            {featuredProjectsSection.highlightText}
+          </span>
         </h2>
         <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
       </div>

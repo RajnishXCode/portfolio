@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCode } from 'react-icons/fa';
+import { personalStory } from '../../constants/Aboutpage/aboutData';
 
 const PersonalStory: React.FC = () => {
   return (
@@ -19,8 +20,8 @@ const PersonalStory: React.FC = () => {
                   
                   {/* Profile Image */}
                   <img 
-                    src="/mypic.png" 
-                    alt="Rajnish - Software Developer" 
+                    src={personalStory.profileImage.src}
+                    alt={personalStory.profileImage.alt}
                     className="w-full h-full object-cover rounded-full relative z-20 group-hover:scale-110 transition-transform duration-700 ease-out filter brightness-105 contrast-105 group-hover:brightness-110 group-hover:contrast-110"
                     loading="lazy"
                     onError={(e) => {
@@ -97,32 +98,23 @@ const PersonalStory: React.FC = () => {
             <div className="md:w-2/3">
               <div className="relative mb-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative z-10">
-                  My <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">Story</span>
+                  {personalStory.title.replace(personalStory.highlightText, '')}{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
+                    {personalStory.highlightText}
+                  </span>
                 </h2>
                 <div className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-secondary to-orange-500 rounded-full"></div>
               </div>
               
               <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-                <div className="relative group">
-                  <p className="relative z-10 p-4 rounded-lg transition-all duration-300 group-hover:text-white">
-                    My journey into software development began with pure curiosity. What started as tinkering with code quickly evolved into a deep passion for solving complex problems and building solutions that matter.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-orange-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                
-                <div className="relative group">
-                  <p className="relative z-10 p-4 rounded-lg transition-all duration-300 group-hover:text-white">
-                    Over the past few years, I've immersed myself in the ever-evolving world of technology, mastering everything from frontend frameworks to blockchain development. Each project has been a stepping stone, teaching me not just how to write better code, but how to think like a problem-solver.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                
-                <div className="relative group">
-                  <p className="relative z-10 p-4 rounded-lg transition-all duration-300 group-hover:text-white">
-                    Today, I combine technical expertise with a user-centric approach, ensuring that every solution I build is not just functional, but truly valuable to the people who use it.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-orange-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
+                {personalStory.paragraphs.map((paragraph, index) => (
+                  <div key={index} className="relative group">
+                    <p className="relative z-10 p-4 rounded-lg transition-all duration-300 group-hover:text-white">
+                      {paragraph}
+                    </p>
+                    <div className={`absolute inset-0 ${index % 2 === 0 ? 'bg-gradient-to-r from-secondary/5 to-orange-500/5' : 'bg-gradient-to-r from-orange-500/5 to-secondary/5'} rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

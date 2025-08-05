@@ -1,37 +1,16 @@
 import React from 'react';
-import { FaComments, FaClock, FaHandshake } from 'react-icons/fa';
-
-interface CollaborationItem {
-  icon: React.ComponentType<any>;
-  title: string;
-  description: string;
-}
+import { collaborationStyle, collaborationStyleHeader } from '../../constants/Aboutpage/aboutData';
 
 const CollaborationStyle: React.FC = () => {
-  const collaborationStyle: CollaborationItem[] = [
-    {
-      icon: FaComments,
-      title: "Clear Communication",
-      description: "I believe in transparent, regular updates and always keeping stakeholders informed throughout the development process."
-    },
-    {
-      icon: FaClock,
-      title: "Agile Approach",
-      description: "I work in iterative cycles, delivering value early and often while remaining flexible to changing requirements."
-    },
-    {
-      icon: FaHandshake,
-      title: "Partnership Mindset",
-      description: "I see every project as a collaboration where we work together towards a shared vision and mutual success."
-    }
-  ];
-
   return (
     <section className="w-full max-w-6xl mx-auto px-4 md:px-8 py-20 relative z-10">
       <div className="text-center mb-20">
         <div className="relative inline-block">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Collaboration <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">Style</span>
+            {collaborationStyleHeader.title.replace(collaborationStyleHeader.highlightText, '')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
+              {collaborationStyleHeader.highlightText}
+            </span>
           </h2>
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-secondary via-orange-500 to-secondary rounded-full"></div>
           <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-orange-500 via-secondary to-orange-500 rounded-full"></div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { projectsHero } from '../../constants/Projectspage/projectsData';
 
 const ProjectsHero: React.FC = () => {
   return (
@@ -6,7 +7,10 @@ const ProjectsHero: React.FC = () => {
       <div className="text-center relative">
         <div className="inline-block relative mb-6">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 relative z-10">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">Projects</span>
+            {projectsHero.title.replace(projectsHero.highlightText, '')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary">
+              {projectsHero.highlightText}
+            </span>
           </h1>
           {/* Decorative elements around title */}
           <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-secondary/30 rounded-tl-lg"></div>
@@ -19,7 +23,7 @@ const ProjectsHero: React.FC = () => {
         </div>
         
         <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-          A showcase of my development journey - from full-stack web applications to blockchain solutions and mobile apps. Each project represents a unique challenge and learning experience.
+          {projectsHero.description}
         </p>
       </div>
     </section>

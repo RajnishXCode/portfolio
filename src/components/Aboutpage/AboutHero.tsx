@@ -1,4 +1,5 @@
 import React from 'react';
+import { aboutHero } from '../../constants/Aboutpage/aboutData';
 
 const AboutHero: React.FC = () => {
   return (
@@ -11,7 +12,10 @@ const AboutHero: React.FC = () => {
         
         <div className="inline-block relative mb-6">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 relative z-10">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">Me</span>
+            {aboutHero.title.replace(aboutHero.highlightText, '')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
+              {aboutHero.highlightText}
+            </span>
           </h1>
           {/* Decorative elements around title */}
           <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-secondary/30 rounded-tl-lg"></div>
@@ -25,7 +29,7 @@ const AboutHero: React.FC = () => {
         
         <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed relative">
           <span className="relative z-10">
-            A passionate developer on a mission to create meaningful digital experiences that bridge the gap between innovative technology and real-world solutions.
+            {aboutHero.description}
           </span>
           {/* Subtle highlight effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/5 to-transparent rounded-lg -z-10"></div>
