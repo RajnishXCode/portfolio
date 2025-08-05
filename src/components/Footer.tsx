@@ -1,5 +1,5 @@
-import { MdEmail } from "react-icons/md";
-import { FaGithub } from "react-icons/fa";
+// import { MdEmail } from "react-icons/md";
+import { FaGithub,FaMediumM   } from "react-icons/fa";
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { footerText, userTitle, socialLinks } from "../constants/globalData";
 
@@ -10,25 +10,25 @@ function Footer() {
       <div className="text-sm">{footerText}</div>
       <div className="flex flex-row items-center justify-center gap-4 mt-4">
         <div
-          className="flex items-center justify-center bg-white rounded-full p-2"
-          onClick={() => window.open(socialLinks.email)}
+          className="flex items-center justify-center bg-white rounded-full p-2 cursor-pointer"
+          onClick={() => window.open(socialLinks.medium)}
         >
-          <MdEmail size={20} color="var(--color-background)" />
+          <FaMediumM  size={20} color="var(--color-background)" />
         </div>
         <div
-          className="flex items-center justify-center rounded-full"
+          className="flex items-center justify-center rounded-full cursor-pointer"
           onClick={() => window.open(socialLinks.github)}
         >
           <FaGithub size={38} color="white" />
         </div>
         <div
-          className="flex items-center justify-center bg-white rounded-full p-2"
+          className="flex items-center justify-center bg-white rounded-full p-2 cursor-pointer"
           onClick={() => window.open(socialLinks.linkedin)}
         >
           <FaLinkedinIn size={20} color="var(--color-background)" />
         </div>
         <div
-          className="flex items-center justify-center bg-white rounded-full p-2"
+          className="flex items-center justify-center bg-white rounded-full p-2 cursor-pointer"
           onClick={() => window.open(socialLinks.twitter)}
         >
           <FaXTwitter size={20} color="var(--color-background)" />

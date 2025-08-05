@@ -22,6 +22,7 @@ export const navbarLinks = [
 ];
 
 export const socialLinks = {
+  medium: 'https://medium.com/@RajnishXCode',
   email: 'mailto:contact.rajnishtripathi@gmail.com',
   github: 'https://github.com/RajnishXCode',
   linkedin: 'https://www.linkedin.com/in/RajnishXCode/',
