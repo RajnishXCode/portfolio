@@ -19,7 +19,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({ activeFilter, setActiveFi
       {/* Enhanced Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {projectCategories.map((category) => (
-          <button
+          <div
             key={category.id}
             onClick={() => setActiveFilter(category.id)}
             className={`group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 backdrop-blur-xl border ${
@@ -42,7 +42,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({ activeFilter, setActiveFi
             <div className={`absolute inset-0 rounded-2xl transition-all duration-300 ${
               activeFilter !== category.id ? 'opacity-0 group-hover:opacity-100 bg-secondary/5' : ''
             }`}></div>
-          </button>
+          </div>
         ))}
       </div>
     </div>
