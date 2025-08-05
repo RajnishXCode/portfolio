@@ -1,8 +1,7 @@
-import React from 'react';
-import { testimonials, stats, testimonialsData } from '../../constants/testimonialsData';
+import { testimonials, stats, testimonialsData } from '../../constants/Homepage/testimonialsData';
 import { ctaLink } from '../../constants/globalData';
 
-const Testimonials: React.FC = () => {
+const Testimonials = () => {
   return (
     <section className="min-h-screen bg-primary px-6 md:px-12 py-20">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">

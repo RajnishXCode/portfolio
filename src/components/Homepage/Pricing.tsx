@@ -10,7 +10,7 @@ import {
   customSolutionDescription1,
   customSolutionDescription2,
   customSolutionButtonText,
-} from "../../constants/pricingData";
+} from "../../constants/Homepage/pricingData";
 
 const Pricing = () => {
   const ctaHandler = (planName: string) => {

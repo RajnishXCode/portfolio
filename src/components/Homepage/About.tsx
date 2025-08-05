@@ -1,5 +1,5 @@
 import React from 'react';
-import { timeline, stats, aboutData } from '../../constants/aboutData';
+import { timeline, stats, aboutData } from '../../constants/Homepage/aboutData';
 
 const About: React.FC = () => {
   return (
