@@ -137,7 +137,7 @@ function Projectspage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="w-full max-w-6xl mx-auto px-4 md:px-8 pt-32 pb-16 relative z-10">
+      <section className="w-full max-w-6xl mx-auto px-4 md:px-8 pt-20 pb-16 relative z-10">
         <div className="text-center relative">
           <div className="inline-block relative mb-6">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 relative z-10">
