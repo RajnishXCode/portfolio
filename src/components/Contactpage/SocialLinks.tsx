@@ -1,51 +1,16 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-
-interface SocialLink {
-  icon: React.ComponentType<any>;
-  name: string;
-  username: string;
-  description: string;
-  link: string;
-  color: string;
-}
+import { socialLinks, socialSection } from '../../constants/Contactpage/contactData';
 
 const SocialLinks: React.FC = () => {
-  const socialLinks: SocialLink[] = [
-    {
-      icon: FaGithub,
-      name: 'GitHub',
-      username: '@RajnishXCode',
-      description: 'Check out my code repositories',
-      link: 'https://github.com/RajnishXCode',
-      color: ''
-    },
-    {
-      icon: FaLinkedin,
-      name: 'LinkedIn',
-      username: '@RajnishXCode',
-      description: 'Professional networking',
-      link: 'https://www.linkedin.com/in/RajnishXCode/',
-      color: ''
-    },
-    {
-      icon: FaTwitter,
-      name: 'Twitter',
-      username: '@RajnishXCode',
-      description: 'Follow for tech updates',
-      link: 'https://twitter.com/RajnishXCode',
-      color: ''
-    }
-  ];
-
   return (
     <section className="w-full max-w-4xl mx-auto px-4 md:px-8 py-16 relative z-10">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Follow Me <span className="text-secondary">Online</span>
+          {socialSection.title.replace(socialSection.highlightText, '')}{' '}
+          <span className="text-secondary">{socialSection.highlightText}</span>
         </h2>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Stay updated with my latest projects and tech insights
+          {socialSection.description}
         </p>
       </div>
 
