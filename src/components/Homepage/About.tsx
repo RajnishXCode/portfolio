@@ -3,9 +3,9 @@ import { timeline, stats, aboutData } from '../../constants/Homepage/aboutData';
 
 const About: React.FC = () => {
   return (
-    <section className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:gap-20 py-20 md:py-28 px-4 md:px-8">
-      
-      <div className="md:w-1/2 flex flex-col items-start">
+    <section className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:gap-20 py-10 md:py-20 md:py-28 px-6 md:px-8">
+
+      <div className="hidden md:flex md:w-1/2 flex-col items-start">
         <div className="relative flex flex-col justify-center h-full" style={{ minHeight: '260px' }}>
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-secondary z-0" style={{height: '100%'}}></div>
           <div className="flex flex-col justify-between h-full" style={{ minHeight: '220px' }}>

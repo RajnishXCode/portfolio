@@ -6,8 +6,8 @@ import { footerText, userTitle, socialLinks } from "../constants/globalData";
 function Footer() {
   return (
     <div className="bg-background text-white flex flex-col items-center justify-center py-5 mt-10 border-t border-[#232946] backdrop-blur-sm">
-      <div className="text-2xl font-bold">{userTitle}</div>
-      <div className="text-sm">{footerText}</div>
+      <div className="text-xl md:text-2xl font-bold">{userTitle}</div>
+      <div className="text-[10px] md:text-sm">{footerText}</div>
       <div className="flex flex-row items-center justify-center gap-4 mt-4">
         <div
           className="flex items-center justify-center bg-white rounded-full p-2 cursor-pointer"

@@ -3,19 +3,19 @@ import { projects, portfolioData } from '../../constants/Homepage/portfolioData'
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="projects" className="min-h-screen bg-primary py-20">
+    <section id="projects" className="min-h-screen bg-primary py-10 md:py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-20">
+        <div className="flex flex-col items-center mb-10 md:mb-20 ">
           <h2 className="text-4xl font-bold text-white text-center mb-4">{portfolioData.section.title}</h2>
-          <div className="relative">
+          <div className="relative hidden md:block">
             <div className="h-16 w-1 bg-secondary mx-auto"></div>
             <div className="absolute bottom-0 left-1/2 transform translate-x-[-40%] translate-y-4 h-2 w-2 bg-secondary rounded-full"></div>
           </div>
         </div>
 
         {/* Projects List */}
-        <div className="space-y-32 mt-16">
+        <div className="space-y-12 md:mt-16">
           {projects.map((project, idx) => (
             <div 
               key={idx} 
@@ -59,7 +59,7 @@ const Portfolio: React.FC = () => {
               </div>
               
               {/* Project Image */}
-              <div className="lg:w-1/2 flex items-center justify-center">
+              <div className="lg:w-1/2 flex items-center justify-center hidden md:block">
                 <div className={`relative w-full ${idx % 2 === 0 ? 'flex justify-end' : 'flex justify-start'}`}>
                   {/* Shadow box behind content */}
                   <div className={`absolute w-5/6 h-full rounded-lg border-2 border-white/20 shadow-lg

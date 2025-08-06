@@ -17,12 +17,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen min-h-screen flex flex-col justify-center bg-primary overflow-hidden">
+    <section className="relative h-auto md:h-screen flex flex-col justify-center bg-primary overflow-hidden">
       <Navbar />
 
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto gap-0 flex-grow h-full px-6 md:px-12">
 
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start h-full md:pr-8 z-10">
+        <div className="w-full mt-10 md:w-1/2 flex flex-col justify-center items-start h-full md:pr-8 z-10">
           <div className="flex flex-col justify-center h-full w-full">
             <span className="block text-3xl md:text-4xl font-bold text-white mb-2">
               {heroData.greeting}<span className="text-red-500 align-middle ml-1">.</span>
@@ -54,7 +54,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 flex items-center justify-center relative h-full min-h-[420px]">
+        <div className="hidden md:flex w-full md:w-1/2 items-center justify-center relative h-full min-h-[420px]">
           {/* Chevrons */}
           <FaLessThan size={100} className='text-secondary/70 absolute -left-5 top-[40%] -translate-y-1/2 z-0 hidden md:block' />
           <FaGreaterThan  size={100} className='text-secondary/70 absolute -right-5 top-[80%] -translate-y-1/2 z-0 hidden md:block' />

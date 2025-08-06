@@ -19,23 +19,23 @@ const Pricing = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] py-20 px-6 md:px-12">
+    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] py-10 md:py-20 px-6 md:px-12">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {sectionTitle}
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-md md:text-xl text-gray-300 max-w-3xl mx-auto">
             {sectionDescription1} <br /> {sectionDescription2}
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="md:grid grid-cols-1 md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible flex md:block space-x-4 md:space-x-0 px-2 md:px-0 h-auto py-8 scrollbar-hide">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 ${
+              className={`min-w-[85%] md:min-w-0 relative bg-white/10 dark:bg-white/10 rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 ${
                 plan.popular
                   ? "border-secondary scale-105"
                   : "border-white/20 dark:border-white/20 hover:border-secondary"
@@ -55,16 +55,6 @@ const Pricing = () => {
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {plan.name}
                 </h3>
-
-                {/* Price */}
-                {/* <div className="mb-4">
-                  <span className="text-4xl font-bold text-white">
-                    {plan.price}
-                  </span>
-                  <span className="text-gray-300 ml-2">
-                    {plan.duration}
-                  </span>
-                </div> */}
 
                 {/* Description */}
                 <p className="text-gray-300 mb-8 leading-relaxed">
@@ -104,17 +94,17 @@ const Pricing = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 text-center">
+        <div className="mt-10 md:mt-16 text-center">
           <div className="bg-white/10 dark:bg-white/10 rounded-2xl p-8 shadow-lg border border-white/20 dark:border-white/20">
             <h3 className="text-2xl font-bold text-white mb-4">
               {customSolutionTitle}
             </h3>
-            <p className="text-white/80 mb-6 max-w-xl mx-auto">
+            <p className="text-white/80 text-sm md:text-base mb-6 max-w-xl mx-auto">
               {customSolutionDescription1} <br /> {customSolutionDescription2}
             </p>
             <div
               onClick={() => ctaHandler("Custom Solution")}
-              className="bg-secondary text-white max-w-md mx-auto px-8 py-4 rounded-lg text-lg font-semibold hover:bg-secondary/80 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-secondary text-white max-w-md mx-auto px-8 py-4 rounded-lg md:text-lg font-semibold hover:bg-secondary/80 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {customSolutionButtonText}
             </div>
