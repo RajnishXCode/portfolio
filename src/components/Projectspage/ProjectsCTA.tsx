@@ -4,7 +4,7 @@ import { projectsCTA } from '../../constants/Projectspage/projectsData';
 
 const ProjectsCTA: React.FC = () => {
   return (
-    <section className="w-full max-w-4xl mx-auto px-4 md:px-8 py-20 relative z-10">
+    <section className="w-full max-w-4xl mx-auto px-6 md:px-8 mt-16 md:pt-20 relative z-10">
       <div className="relative group">
         {/* Animated background glow */}
         <div className="absolute inset-0 bg-secondary/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>

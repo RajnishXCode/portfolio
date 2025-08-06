@@ -37,7 +37,7 @@ function Projectspage() {
       <FeaturedProjects projects={projectsData} />
       
       {/* All Projects Section */}
-      <section className="w-full max-w-6xl mx-auto px-4 md:px-8 py-8 relative z-10">
+      <section className="w-full max-w-6xl mx-auto px-6 md:px-8 md:py-8 relative z-10">
         <ProjectFilter activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
         <ProjectGrid projects={filteredProjects} />
         
