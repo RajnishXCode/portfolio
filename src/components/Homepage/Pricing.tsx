@@ -19,7 +19,7 @@ const Pricing = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] py-10 md:py-20 px-6 md:px-12">
+    <section className="min-h-screen bg-[#181c2a] dark:bg-[#181c2a] py-10 md:py-20 md:px-12">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
