@@ -1,4 +1,5 @@
 import { FaEnvelope, FaWhatsapp, FaGithub, FaLinkedin, FaTwitter, FaPhone } from 'react-icons/fa';
+import { ctaLink } from '../globalData';
 
 // Contact methods data
 export interface ContactMethod {
@@ -31,7 +32,7 @@ export const contactMethods: ContactMethod[] = [
     title: 'WhatsApp',
     subtitle: 'Instant Response',
     description: 'Get quick replies for urgent projects or general inquiries. Perfect for real-time discussions.',
-    href: 'https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project',
+    href: `${ctaLink}Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project`,
     icon: FaWhatsapp,
     buttonText: 'Message Now',
     target: '_blank',
@@ -160,7 +161,7 @@ export const contactCTA = {
     {
       type: 'primary',
       text: 'Start a Project',
-      href: 'https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project',
+      href: `${ctaLink}Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project`,
       icon: FaWhatsapp,
       target: '_blank',
       rel: 'noopener noreferrer',

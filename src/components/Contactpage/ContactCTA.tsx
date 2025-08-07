@@ -17,16 +17,22 @@ const ContactCTA: React.FC = () => {
             {contactCTA.buttons.map((button, index) => {
               const Icon = button.icon;
               return (
-                <a
+                <div
                   key={index}
-                  href={button.href}
-                  target={button.target}
-                  rel={button.rel}
-                  className={button.className}
+                  onClick={() => {
+                    if (button.href) {
+                      if (button.target === '_blank') {
+                        window.open(button.href, '_blank');
+                      } else {
+                        window.location.href = button.href;
+                      }
+                    }
+                  }}
+                  className={`${button.className} cursor-pointer`}
                 >
                   <Icon />
                   {button.text}
-                </a>
+                </div>
               );
             })}
           </div>

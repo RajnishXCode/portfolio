@@ -35,12 +35,18 @@ const ProjectsCTA: React.FC = () => {
               {projectsCTA.buttons.map((button, index) => {
                 const IconComponent = button.icon === 'rocket' ? FaRocket : FaExternalLinkAlt;
                 return (
-                  <a
+                  <div
                     key={index}
-                    href={button.href}
-                    target={button.target}
-                    rel={button.rel}
-                    className={`group/btn relative ${
+                    onClick={() => {
+                      if (button.href) {
+                        if (button.target === '_blank') {
+                          window.open(button.href, '_blank');
+                        } else {
+                          window.location.href = button.href;
+                        }
+                      }
+                    }}
+                    className={`group/btn relative cursor-pointer ${
                       button.type === 'primary'
                         ? 'bg-secondary text-white hover:shadow-2xl hover:shadow-secondary/25'
                         : 'border-2 border-secondary text-secondary hover:bg-secondary hover:text-white backdrop-blur-sm'
@@ -54,7 +60,7 @@ const ProjectsCTA: React.FC = () => {
                     <div className={`absolute inset-0 ${
                       button.type === 'primary' ? 'bg-secondary/80' : 'bg-secondary'
                     } opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300`}></div>
-                  </a>
+                  </div>
                 );
               })}
             </div>

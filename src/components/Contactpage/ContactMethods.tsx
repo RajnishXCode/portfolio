@@ -49,6 +49,15 @@ const ContactMethods: React.FC = () => {
     if (method.type === "call") {
       e.preventDefault();
       setIsModalOpen(true);
+    } else {
+      // Handle other contact methods
+      if (method.href) {
+        if (method.target === '_blank') {
+          window.open(method.href, '_blank');
+        } else {
+          window.location.href = method.href;
+        }
+      }
     }
   };
 
@@ -58,11 +67,8 @@ const ContactMethods: React.FC = () => {
         {contactMethods.map((method, index) => {
           const Icon = method.icon;
           return (
-            <a
+            <div
               key={index}
-              href={method.type === "call" ? "#" : method.href}
-              target={method.type === "call" ? undefined : method.target}
-              rel={method.type === "call" ? undefined : method.rel}
               onClick={(e) => handleCardClick(e, method)}
               className={`group ${method.colorClasses.background} rounded-2xl shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:-translate-y-2 border-2 ${method.colorClasses.border} ${method.colorClasses.hoverBorder} p-8 text-center backdrop-blur-xl relative overflow-hidden cursor-pointer`}
             >
@@ -95,7 +101,7 @@ const ContactMethods: React.FC = () => {
                   <FaPaperPlane className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
-            </a>
+            </div>
           );
         })}
       </div>
@@ -107,7 +113,7 @@ const ContactMethods: React.FC = () => {
             {/* Close Button */}
             <div
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
             >
               <FaTimes className="text-xl" />
             </div>

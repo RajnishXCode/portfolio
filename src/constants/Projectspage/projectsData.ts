@@ -1,4 +1,5 @@
 import { FaCode, FaDatabase, FaMobile, FaGlobe, FaRocket } from 'react-icons/fa';
+import { ctaLink } from '../globalData';
 
 export interface Project {
   id: number;
@@ -60,7 +61,7 @@ export const projectsCTA = {
     {
       type: 'primary',
       text: 'Start a Project',
-      href: 'https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project',
+      href: `${ctaLink}Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project`,
       target: '_blank',
       rel: 'noopener noreferrer',
       icon: 'rocket'
