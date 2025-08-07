@@ -36,7 +36,7 @@ export const heroData = {
   }
 };
 
-export const ctaMessage = 'Hi Rajnish, I got a project for you!';
+const ctaMessage = 'Hi Rajnish, I got a project for you!';
 
 export const encodeCtaMessage = () => {
     return encodeURIComponent(`${ctaMessage}`);

@@ -77,14 +77,14 @@ const Testimonials = () => {
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-4">
               {testimonialsData.cta.subtitle}
             </p>
-            <a
-              href={`${ctaLink}${testimonialsData.cta.whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-secondary hover:bg-secondary/80 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
+            <div
+              onClick={() => {
+                window.open(`${ctaLink}${testimonialsData.cta.whatsappMessage}`, '_blank');
+              }}
+              className="bg-secondary hover:bg-secondary/80 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block cursor-pointer"
             >
               {testimonialsData.cta.buttonText}
-            </a>
+            </div>
           </div>
         </div>
       </div>

@@ -21,15 +21,22 @@ const AboutCTA: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             {aboutCTA.buttons.map((button, index) => (
-              <a
+              <div
                 key={index}
-                href={button.href}
-                target={button.target}
-                rel={button.rel}
                 className={button.className}
+                onClick={() => {
+                  if (button.href) {
+                    if (button.target === '_blank') {
+                      window.open(button.href, '_blank');
+                    } else {
+                      window.location.href = button.href;
+                    }
+                  }
+                }}
+                style={{ cursor: 'pointer' }}
               >
                 {button.text}
-              </a>
+              </div>
             ))}
           </div>
         </div>

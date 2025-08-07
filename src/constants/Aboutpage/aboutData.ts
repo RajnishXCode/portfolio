@@ -1,4 +1,5 @@
 import { FaGraduationCap, FaCode, FaBriefcase, FaTrophy, FaRocket, FaComments, FaClock, FaHandshake, FaEye, FaHeart } from 'react-icons/fa';
+import { ctaLink } from '../globalData';
 
 // About Hero data
 export const aboutHero = {
@@ -150,7 +151,7 @@ export const aboutCTA = {
     {
       type: 'primary',
       text: 'Start a Project',
-      href: 'https://wa.me/919999999999?text=Hi%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project',
+      href: `${ctaLink}%20Rajnish,%20I%20would%20like%20to%20discuss%20a%20project`,
       target: '_blank',
       rel: 'noopener noreferrer',
       className: 'bg-secondary text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-secondary/80 transition-all duration-300'
