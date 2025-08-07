@@ -13,7 +13,7 @@ const CollaborationStyle: React.FC = () => {
             </span>
           </h2>
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-secondary via-orange-500 to-secondary rounded-full"></div>
-          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-orange-500 via-secondary to-orange-500 rounded-full"></div>
+          {/* <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-orange-500 via-secondary to-orange-500 rounded-full"></div> */}
         </div>
       </div>
       
