@@ -25,7 +25,11 @@ const ContactMethods: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log("Form submitted:", formData);    
+    console.log("Form submitted:", formData);  
+    
+    console.log("service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("public key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     emailjs
       .send(
