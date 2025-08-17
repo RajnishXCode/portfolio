@@ -207,7 +207,7 @@ export const projectsData: Project[] = [
   liveUrl: '',
   githubUrl: '/private',
   featured: false,
-  year: "2024",
+  year: "2023",
   duration: "1.5 months",
   teamSize: "Team of 2",
 }
