@@ -12,28 +12,28 @@ export interface Stat {
 
 export const testimonials: Testimonial[] = [
   {
-    quote: "Rajnish delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise made the entire process smooth and professional.",
-    author: "Priya Sharma",
-    role: "Founder, Fashion Boutique",
-    company: "StyleHub"
+    quote: "Rajnish did an excellent job on our branding and website. The new identity looks professional, and people can now easily learn about our company and services. Highly recommended!",
+    author: "Sanjeev",
+    role: "Founder",
+    company: "Savitri Enterprises"
   },
+  // {
+  //   quote: "Working with Rajnish was a game-changer for our startup. He built a robust mobile app that helped us scale from 100 to 10,000 users within months. Highly recommended!",
+  //   author: "Arjun Patel",
+  //   role: "CEO",
+  //   company: "TechStart Solutions"
+  // },
+  // {
+  //   quote: "Rajnish's expertise in blockchain and Web3 technologies helped us create a cutting-edge DeFi application. His knowledge of ICP and smart contracts is outstanding.",
+  //   author: "Meera Reddy",
+  //   role: "CTO",
+  //   company: "CryptoFin Labs"
+  // },
   {
-    quote: "Working with Rajnish was a game-changer for our startup. He built a robust mobile app that helped us scale from 100 to 10,000 users within months. Highly recommended!",
-    author: "Arjun Patel",
-    role: "CEO",
-    company: "TechStart Solutions"
-  },
-  {
-    quote: "Rajnish's expertise in blockchain and Web3 technologies helped us create a cutting-edge DeFi application. His knowledge of ICP and smart contracts is outstanding.",
-    author: "Meera Reddy",
-    role: "CTO",
-    company: "CryptoFin Labs"
-  },
-  {
-    quote: "The restaurant management system Rajnish built for us has streamlined our operations completely. The interface is intuitive and the backend is rock-solid.",
+    quote: "Rajnish and his team built us a custom billing app for our restaurant’s needs. It made our operations faster and more organized, while being budget-friendly and a huge time saver.",
     author: "Vikram Singh",
     role: "Owner",
-    company: "Spice Garden Restaurant"
+    company: "Zaika Junction Restaurant"
   }
 ];
 

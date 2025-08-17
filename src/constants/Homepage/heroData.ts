@@ -33,7 +33,13 @@ export const heroData = {
   buttons: {
     project: 'Got a project?',
     resume: 'My resume'
-  }
+  },
+  typingTexts: [
+    "Full-Stack Developer",
+    "MERN Stack Developer",
+    "Building AI-Powered Apps & Blockchain Solutions",
+    "Open to Opportunities"
+  ]
 };
 
 const ctaMessage = 'Hi Rajnish, I got a project for you!';

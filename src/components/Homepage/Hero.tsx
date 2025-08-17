@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Navbar from '../Navbar';
 import { FaLessThan, FaGreaterThan } from "react-icons/fa";
 import { techIcons, heroData, encodeCtaMessage } from '../../constants/Homepage/heroData';
@@ -6,10 +6,40 @@ import { ctaLink } from '../../constants/globalData';
 
 const Hero = () => {
 
+
   // Auto-scrolling tech stack strip
   const stripRef = useRef<HTMLDivElement>(null);
   // Duplicate icons for seamless loop
   const iconList = [...techIcons, ...techIcons];
+
+  // Typing effect for hero titles
+  const typingTexts = heroData.typingTexts;
+  const [currentText, setCurrentText] = useState('');
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentString = typingTexts[textIndex];
+    let timeout;
+    if (!isDeleting && charIndex < currentString.length) {
+      timeout = setTimeout(() => {
+        setCurrentText(currentString.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      }, 80);
+    } else if (isDeleting && charIndex > 0) {
+      timeout = setTimeout(() => {
+        setCurrentText(currentString.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      }, 40);
+    } else if (!isDeleting && charIndex === currentString.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1200);
+    } else if (isDeleting && charIndex === 0) {
+      setIsDeleting(false);
+      setTextIndex((textIndex + 1) % typingTexts.length);
+    }
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, textIndex, typingTexts]);
 
   const handleCTA = () => {
     const message = encodeCtaMessage();
@@ -29,10 +59,11 @@ const Hero = () => {
             </span>
             <div className="flex items-center mb-2">
               <span className="block w-12 h-1 bg-secondary mr-4 rounded-full" />
-              <span className="text-2xl md:text-3xl text-white font-light">{heroData.contraction} {heroData.name}</span>
+              <span className="text-2xl xs:text-xl md:text-3xl text-white font-light">{heroData.contraction} {heroData.name}</span>
             </div>
-            <span className="block text-5xl md:text-3xl lg:text-4xl font-extrabold text-white mb-6">
-              {heroData.title}<span className="text-orange-500"></span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl font-extrabold text-white mb-6">
+              {currentText}
+              <span className="text-orange-500">|</span>
             </span>
             <div className="flex gap-4 mb-8">
               <div

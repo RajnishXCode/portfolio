@@ -97,7 +97,7 @@ const Portfolio: React.FC = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-72 object-cover object-center"
+                      className="w-full h-72 object-fit object-center"
                     />
                   </div>
                 </div>
